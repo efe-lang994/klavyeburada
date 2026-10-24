@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klavyeburada - Klavyeyi Görcek misin?</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow -->
+  <div class="bg-glow"></div>
+
+  <!-- Branding -->
+  <header class="site-header">
+    <span>⌨️</span>
+    <span>klavyeburada</span>
+    <span class="site-badge">vercel.app</span>
+  </header>
+
+  <main class="main-wrapper">
+    
+    <!-- 1. Soru Ekranı -->
+    <section id="promptCard" class="prompt-card">
+      <div class="keyboard-icon">⌨️</div>
+      <h1 class="prompt-title">Klavyeyi görcek misin?</h1>
+      <p class="prompt-sub">Aşağıdaki seçeneklerden birini seçin.</p>
+      
+      <div class="buttons-group">
+        <button id="btnYes" class="btn btn-yes" type="button">Evet</button>
+        <button id="btnNo" class="btn btn-no" type="button">Hayır</button>
+      </div>
+    </section>
+
+    <!-- 2. Evet Ekranı (Sadece evet.png çıkar) -->
+    <section id="yesScreen" class="result-screen" style="display: none;">
+      <div class="result-card yes-theme">
+        <h2 class="result-title">İşte Klavye! ✨</h2>
+        <div class="media-frame">
+          <img src="evet.png" alt="Klavye Görseli" class="main-media">
+        </div>
+        <button class="btn-back" type="button" onclick="goBack()">← Tekrar Seç</button>
+      </div>
+    </section>
+
+    <!-- 3. Hayır Ekranı (Sadece tuzak.mp4 çıkar) -->
+    <section id="noScreen" class="result-screen" style="display: none;">
+      <div class="result-card no-theme">
+        <h2 class="result-title">TUZAK! 🚨</h2>
+        <div class="media-frame video-frame">
+          <video id="tuzakVideo" src="tuzak.mp4" playsinline loop autoplay controls class="main-media"></video>
+        </div>
+        <button class="btn-back" type="button" onclick="goBack()">← Tekrar Seç</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
